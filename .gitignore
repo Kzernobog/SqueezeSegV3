@@ -1,0 +1,6 @@
+src/backbones/__pycache__/*.pyc
+src/common/__pycache__/*.pyc
+src/tasks/__pycache__/*.pyc
+/__pycache__/
+models/
+*.swp

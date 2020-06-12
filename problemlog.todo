@@ -1,0 +1,33 @@
+Questions end with ? and the corresponding answers start with a -->
+E.g: Is the Earth a perfect sphere? --> Nope, its a Geoid.
+The purpose of a "Todo Inbox" section is to capture tasks. The "Todo" section is just a hierarchical restructuring of the "Todo Inbox". Everything in this document is MarkDown compatible.
+
+## Todo Inbox
+
+## Todo
+
+- [X] Download and integrate SemanticKITTI 
+  - [X] Check if test set is labelled --> test set labelled but not released, only for private evaluation
+  - [X] What is the structure of the dataset?? --> 00-10 are training sequence, 11-21 are testing sequences, point cloud labels only availabel for training set, most of the benchmarks use sequence 08 as validation
+- [ ] Run SqueezeSegV3 on Semantic KITTI
+  - [X] prepare data set sequence
+    - [X] prepare labels
+    - [X] prepare velodyne scans
+  - [X] run scripts to generate point cloud prediction for sequence
+  - [X] create scripts that run inference
+  - [X] generate predictions for sequence 8 only (08:32:55, 03 Jun 2020)
+  - [ ] visualise predictions, save as images/clouds
+    - [ ] Project Lidar Point cloud onto image plane, filter for pedestrian points
+    - [ ] visualise image with points
+  - [X] create script to transfer predictions to mac
+- [ ] Extract pedestrian(or any other region of interest) semantics from image
+  - [X] download KITTI odometry color image data
+  - [X] collate all labels for the odometry benchmark --> point cloud segmentation result only available for odometry dataset
+  - [ ] run semantic segmentation models on image only data, generate predictions
+  - [ ] predict pedestrians and road semantic labels, on image
+- [X] Run non-deletion scripts periodically on dataset folde in scratch.
+- [ ] ! Sanity check Hausdorff distance on Image labels and Point Cloud predictions/labels
+  - [ ] Download Calibration files for point cloud data
+  - [ ] Project point cloud data onto image and visualise 
+  - [ ] Isolate Pedestrian regions in Point cloud Projection and image labels
+  - [ ] Run Optimisation on Hausdorff loss between pedestrian image mask and projected point cloud mask.
